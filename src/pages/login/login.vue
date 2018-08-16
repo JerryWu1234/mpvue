@@ -57,6 +57,7 @@ export default {
                 success: function (e) {
                   //获取当前用户的个人信息设置用户的所在地址
                   let userinfo = e.data.data.userinfo
+
                   userinfo.city = address.city//设置城市
                   userinfo.province = address.province//设置地区
                   wx.setStorageSync('userInfo', userinfo)
@@ -69,7 +70,10 @@ export default {
                       that.$router.replace('../createInformation/information')
                     }else{
                       //球队列表
-                      that.$router.replace('../createInformation/information')
+                      console.log('输入')
+                      wx.switchTab({
+                        url: '../teamhomelist/teamhomelist'
+                      })
                     }
                   })
                 },

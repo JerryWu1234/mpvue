@@ -17,19 +17,20 @@ app.$mount()
 export default {
   // 这个字段走 app.json
   config: {
-    pages: ['pages/aaaa','pages/index','pages/logs'],
+    pages: ['pages/teamhomelist/teamhomelist','pages/index','pages/logs','pages/teamhomelist/teamdetails'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarTextStyle: 'black',
+      backgroundColor:"#f2f2f2"
     },
     tabBar: {
       selectedColor: "#1296db",
       borderStyle:"white",
       list: [
         {
-          pagePath: "pages/aaaa",
+          pagePath: "pages/teamhomelist/teamhomelist",
           text: "队员列表",
           iconPath: "static/images/ico-home.png",
           selectedIconPath: "static/images/ico-home-d.png"

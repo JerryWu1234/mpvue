@@ -75,9 +75,12 @@
             this.personal.position = this.mArray[e.target.value];
           },
           async submitpersonal(){
+            debugger
+            try{
             let datalist =  await http.$httpPost('/weapp/playerApplication',{
                 ...this.personal,
               })
+            debugger
             //用户添加失败
               if(!datalist.data.success){
                 showModel('请求失败', datalist.data.msg)
@@ -85,7 +88,9 @@
               }else {
 
               }
-
+            }catch (e){
+              console.log(e.message)
+            }
           }
 
         },
@@ -127,7 +132,6 @@
     padding: 10rpx;
   }
   .personalCharacteristic{
-
     width: 100%;
     margin-top: 30rpx;
     font-size: 26rpx;
@@ -152,7 +156,7 @@
     width: 240rpx;
     height: 240rpx;
     border-radius: 120rpx;
-
+    background-size: 100% 100%
   }
   .personalbutton{
     display: block;
